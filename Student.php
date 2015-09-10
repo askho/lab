@@ -26,7 +26,7 @@ class Student {
         foreach ($this->grades as $value) {
             $total += $value;
         }
-        return $total / cout($this->grades);
+        return $total / count($this->grades);
     }
     function toString() {
         $result = $this->first_name . ' ' . $this->surname;

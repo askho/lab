@@ -13,6 +13,7 @@
      <body>
          <?php
             include ('student.php'); 
+            //Creating the first student
             $first = new Student();
             $first->surname = "Doe";
             $first->first_name = "John";
@@ -22,7 +23,7 @@
             $first->add_grade(75);
             $first->add_grade(55);
             
-            //Second student
+            //Creating the second student
             $second = new Student();
             $second->surname = "Einstein";
             $second->first_name = "Albert";
@@ -33,10 +34,22 @@
             $second->add_grade(80);
             $second->add_grade(50);
             
+            //Creating the third student
+            $third = new Student();
+            $third->surname = "Parry";
+            $third->first_name = "Jim";
+            $third->add_grade(0);
+            $third->add_grade(40);
+            $third->add_email('work', 'jim_perry@bcit.ca');
+            
+            //Add to array and sort
             $students = array();
             $students['j123'] = $first;
             $students['a456'] = $second;
+            $students["b212"] = $third;
+            ksort($students);
             
+            //Display the students
             foreach($students as $student){
                 echo $student->toString();
             }
